@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caculator</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Script Tags -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="cal.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <header class="hed">
+            <center>
+                <h1 style="padding: 10px;">MATH SOLVER</h1>
+            </center>
+        </header>
+
+        <div class="row">
+            <div class="col-8 pad">
+                <h3 class="text-center">CALCULATOR</h3>
+                <hr>
+                <div class="card" style="padding: 50px; background-color: lightgray;">
+                    <div class="cen">
+                        <div class="row" style=" ">
+                            <div class="col-4">
+                                <input class="form-control" type="text" id="no" style="width: 100%; text-align: right;"
+                                    placeholder="0" disabled>
+                            </div>
+                            <div class="col-2">
+                                <button style="width: 100%;" class="btn btn-danger"
+                                    onclick="clearscreen()">Clear</button>
+                            </div>
+                            <div class="col-2">
+                                <button style="width: 100%;" class="btn btn-primary"
+                                    onclick="display('**')">Power</button>
+                            </div>
+                        </div>
+
+                        <br>
+                        <div class="row" style=" ">
+                            <div class="col-2">
+                                <button style="width: 100%;" class="btn btn-light" onclick="display('1')">1</button>
+                            </div>
+                            <div class="col-2">
+                                <button style="width: 100%;" class="btn btn-light" onclick="display('2')">2</button>
+                            </div>
+                            <div class="col-2">
+                                <button style="width: 100%;" class="btn btn-light" onclick="display('3')">3</button>
+                            </div>
+                            <div class="col-2">
+                                <button style="width: 100%;" class="btn btn-primary" onclick="display('+')">+</button>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row" style=" ">
+                            <div class="col-2">
+                                <button style="width: 100%;" class="btn btn-light" onclick="display('4')">4</button>
+                            </div>
+                            <div class="col-2">
+                                <button style="width: 100%;" class="btn btn-light" onclick="display('5')">5</button>
+                            </div>
+                            <div class="col-2">
+                                <button style="width: 100%;" class="btn btn-light" onclick="display('6')">6</button>
+                            </div>
+                            <div class="col-2">
+                                <button style="width: 100%;" class=" btn btn-primary" onclick="display('-')">-</button>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row" style=" ">
+                            <div class="col-2">
+                                <button style="width: 100%;" class="btn btn-light" onclick="display('7')">7</button>
+                            </div>
+                            <div class="col-2">
+                                <button style="width: 100%;" class="btn btn-light" onclick="display('8')">8</button>
+                            </div>
+                            <div class="col-2">
+                                <button style="width: 100%;" class="btn btn-light" onclick="display('9')">9</button>
+                            </div>
+                            <div class="col-2">
+                                <button style="width: 100%;" class=" btn btn-primary" onclick="display('*')">*</button>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row" style=" ">
+                            <div class="col-2">
+                                <button style="width: 100%;" class="btn btn-light" onclick="display('.')">.</button>
+                            </div>
+                            <div class="col-2">
+                                <button style="width: 100%;" class="btn btn-light" onclick="display('0')">0</button>
+                            </div>
+                            <div class="col-2">
+                                <button style="width: 100%;" class="btn btn-success" onclick="calculate()">=</button>
+                            </div>
+                            <div class="col-2">
+                                <button style="width: 100%;" class="btn btn-primary" onclick="display('/')">/</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 pad">
+                <h3 class="text-center">HISTORY</h3>
+                <hr>
+                <div class="card his scroll">
+                    <div id="hist">
+
+                    </div>
+                    <!-- <div class="bt">
+                        <button style="width: 90%;" class="btn btn-danger" onclick="clearhistory()">Reset</button>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <footer class="foot">
+            <center>
+                <p>© 2021 Neel Sabne. All Rights Reserved. Privacy Policy - Terms of Service.</p>
+            </center>
+        </footer>
+    </main>
+</body>
+
+</html>
